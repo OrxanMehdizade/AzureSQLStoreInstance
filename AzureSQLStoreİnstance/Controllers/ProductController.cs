@@ -1,4 +1,5 @@
 ﻿using AzureSQLStoreİnstance.Data;
+using AzureSQLStoreİnstance.Models;
 using AzureSQLStoreİnstance.Models.Entity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
@@ -15,6 +16,7 @@ namespace AzureSQLStoreİnstance.Controllers
             _context = context;
         }
 
+        [HttpGet]
         public IActionResult Index(int? categoryId)
         {
             IQueryable<Product> products = _context.Products.Include(p => p.ProductCategory);
@@ -27,11 +29,6 @@ namespace AzureSQLStoreİnstance.Controllers
             ViewData["Categories"] = categories;
             var productsList = products.ToList();
             return View(productsList);
-        }
-
-        public IActionResult Privacy()
-        {
-            return View();
         }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]

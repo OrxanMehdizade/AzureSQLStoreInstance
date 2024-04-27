@@ -1,5 +1,6 @@
-﻿﻿@{
-    ViewData["Title"] = "Home Page";
+﻿
+﻿@{
+    ViewData["Title"] = "Product";
 }
 
 @model List<Product>
@@ -7,7 +8,7 @@
 @if (Model.Count > 0)
 {
         <div class="col-md-3">
-            <form asp-controller="Home" asp-action="Index" method="get">
+            <form asp-controller="Product" asp-action="Index" method="get">
                 <div class="form-group">
                     <label for="categoryFilter">Filter by Category:</label>
                     <select id="categoryFilter" class="form-control" name="categoryId">

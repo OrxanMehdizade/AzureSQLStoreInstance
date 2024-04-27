@@ -1,4 +1,5 @@
-using AzureSQLStore?nstance.Data;
+﻿
+using AzureSQLStoreİnstance.Data;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
